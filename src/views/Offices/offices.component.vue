@@ -2,7 +2,7 @@
   <div class="offices-component">
     <notification-component></notification-component>
     <div class="container mx-auto px-4 py-40 w-80 text-sm">
-      <h1 class="text-pelorous text-6xl text-center">Offices</h1>
+      <h1 ref="AppTitle" class="text-pelorous text-6xl text-center">Offices</h1>
 
       <div class="pt-8">
         <location-form-component></location-form-component>

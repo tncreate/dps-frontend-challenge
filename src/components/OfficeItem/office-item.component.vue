@@ -1,6 +1,6 @@
 <template>
   <transition name="slide-up">
-  <div v-if="isVisible && office" class="office-item-component">
+  <div ref="OfficeItem" v-if="isVisible && office" class="office-item-component">
     <div
       class="header-info relative rounded-md shadow-lg px-6 py-12 cursor-pointer z-10"
       :class="[`bg-${office.color}`]"

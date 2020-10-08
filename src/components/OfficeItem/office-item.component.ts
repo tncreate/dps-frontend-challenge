@@ -48,9 +48,13 @@ export default class OfficeItemComponent extends Vue {
   /**
    * Open / Close the Office details
    * + Any open forms should be closed
+   * + Scroll to the top of the item if form is open
    */
   public toggleOfficeDetails(): void {
     this.showDetails = !this.showDetails;
+    if (this.showDetails && this.locationFormService.isFormOpen) {
+      this.scrollToItem();
+    }
     this.locationFormService.closeForm();
   }
 
@@ -108,5 +112,15 @@ export default class OfficeItemComponent extends Vue {
     } else {
       NotificationService.getInstance().showError(`Could not delete ${this.office.name}`);
     }
+  }
+
+  /**
+   * Scroll to show the item
+   * + Prevent closing of the form
+   */
+  private scrollToItem(): void {
+    const appTitleElement: HTMLElement = <HTMLElement> this.$refs.OfficeItem;
+    const top: number = appTitleElement && appTitleElement.offsetTop;
+    window.scrollTo(0, top || 0);
   }
 }

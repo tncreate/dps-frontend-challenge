@@ -1,6 +1,7 @@
 import { Component, Vue } from 'vue-property-decorator';
 
 import { Office } from '@/shared/model/Office';
+import { LocationFormService } from '@/components/LocationForm/location-form.service';
 
 import OfficeItemComponent from '@/components/OfficeItem/office-item.component.vue';
 import LocationFormComponent from '@/components/LocationForm/location-form.component.vue';
@@ -14,8 +15,25 @@ import NotificationComponent from '@/components/Notification/notification.compon
   },
 })
 export default class OfficesComponent extends Vue {
+  // @ts-ignore
+  private openFormSubscription: Subscription;
+
+  // @ts-ignore
+  private locationFormService: LocationFormService = LocationFormService.getInstance();
+
+  /**
+   * Subscribe form open event
+   */
   public mounted(): void {
     this.loadOffices();
+    this.openFormSubscription = this.locationFormService.openLocationFormObservable.subscribe(this.handleFormOpen);
+  }
+
+  /**
+   * Unsubscribe form open/close events
+   */
+  public beforeDestroy(): void {
+    this.openFormSubscription.unsubscribe();
   }
 
   /**
@@ -37,5 +55,17 @@ export default class OfficesComponent extends Vue {
    */
   private loadOffices(): void {
     this.$store.dispatch('offices/get');
+  }
+
+  /**
+   * Handle event emited when a form is opened
+   * + Scroll to the top (App title) if user is edditing
+   */
+  private handleFormOpen(): void {
+    if (this.locationFormService.isEditing) {
+      const appTitleElement: HTMLElement = <HTMLElement> this.$refs.AppTitle;
+      const top: number = appTitleElement && appTitleElement.offsetTop;
+      window.scrollTo(0, top || 0);
+    }
   }
 }
