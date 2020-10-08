@@ -1,0 +1,20 @@
+
+.color-input-component {
+
+  >.color-list-wrapper{
+
+    // Transitions
+    &.open-enter-active,
+    &.open-leave-active {
+      transition: all .3s ease;
+      max-height: 700px;
+    }
+    &.open-enter,
+    &.open-leave-to {
+      max-height: 0px;
+      padding-top: 0;
+      padding-bottom: 0;
+      opacity: 0;
+    }
+  }
+}

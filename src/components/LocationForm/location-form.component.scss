@@ -1,0 +1,42 @@
+
+$formHeaderHeight: 50px;
+
+.location-form-component {
+  min-height: $formHeaderHeight;
+
+  >.btn-action{
+    height: $formHeaderHeight;
+  }
+
+  >.add-location{
+    min-height: $formHeaderHeight;
+
+    // Transitions
+    &.fade-enter-active,
+    &.fade-leave-active {
+      transition: all .5s ease;
+    }
+    &.fade-enter,
+    &.fade-leave-to {
+      opacity: 0;
+    }
+  }
+
+  >.form-wrapper{
+
+    // Transitions
+    &.slide-up-open-enter-active,
+    &.slide-up-open-leave-active {
+      transition: all .3s ease;
+      max-height: 1000px;
+    }
+    &.slide-up-open-enter,
+    &.slide-up-open-leave-to {
+      transform: translateY(100px);
+      max-height: 0px;
+      padding-top: 0;
+      padding-bottom: 0;
+      opacity: 0;
+    }
+  }
+}

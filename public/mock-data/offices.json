@@ -1,0 +1,62 @@
+[
+  {
+    "id": "Romaguera-Crona",
+    "name": "Romaguera-Crona",
+    "address": "Kulas Light, Apt. 556",
+    "color": "pelorous",
+    "contact": {
+      "name": "Leanne Graham",
+      "position": "Software Tester",
+      "email": "Sincere@april.biz",
+      "phone": "(770) 736-8031"
+    }
+  },
+  {
+    "id": "Deckow-CristB",
+    "name": "Deckow-Crist",
+    "address": "Victor Plains, Suite 879",
+    "color": "koromiko",
+    "contact": {
+      "name": "Ervin Howell",
+      "position": "Designer",
+      "email": "Shanna@melissa.tv",
+      "phone": "(010) 692-6593"
+    }
+  },
+  {
+    "id": "Romaguera-Jacobson",
+    "name": "Romaguera-Jacobson",
+    "address": "Douglas Extension, Suite 847",
+    "color": "geraldine",
+    "contact": {
+      "name": "Clementine Bauch",
+      "position": "Product Owner",
+      "email": "Nathan@yesenia.net",
+      "phone": "(463) 123-4447"
+    }
+  },
+  {
+    "id": "Robel-Corkery",
+    "name": "Robel-Corkery",
+    "address": "Hoeger Mall, Apt. 692",
+    "color": "grayChateau",
+    "contact": {
+      "name": "Patricia Lebsack",
+      "position": "Backend Engineer",
+      "email": "Julianne.OConner@kory.org",
+      "phone": "(493) 170-9623"
+    }
+  },
+  {
+    "id": "Keebler-LLCsE",
+    "name": "Keebler LLC",
+    "address": "Skiles Walks, Suite 351",
+    "color": "oxfordBlue",
+    "contact": {
+      "name": "Chelsey Dietrich",
+      "position": "Frontend Engineer",
+      "email": "Lucio_Hettinger@annie.ca",
+      "phone": "(254) 954-1289"
+    }
+  }
+]
